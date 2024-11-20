@@ -13,7 +13,7 @@ services:
   app-timesheet:
     depends_on:
       - mysqldb
-    image: amineghanmi/dockerimage:latest
+    image: amineghanmi/tp-achat-back:latest
     restart: on-failure
     ports:
       - "8082:8082"
