@@ -3,7 +3,7 @@ services:
   mysqldb:
     image: mysql:latest
     container_name: mysqldb
-    restart: on-failure
+    restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: P@ssw0rd
       MYSQL_DATABASE: alinfo
@@ -16,7 +16,7 @@ services:
     depends_on:
       - mysqldb
     image: amineghanmi/tp-achat-back:latest
-    restart: on-failure
+    restart: unless-stopped
     ports:
       - "8082:8082"
     environment:
