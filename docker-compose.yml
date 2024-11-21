@@ -12,6 +12,7 @@ services:
       - "3306:3306"
     volumes:
       - db:/var/lib/mysql
+
   tpAchatProject:
     depends_on:
       - mysqldb
@@ -29,15 +30,14 @@ services:
       }'
     stdin_open: true
     tty: true
-    
-    tpAchatProject-front:
+
+  tpAchatProject-front:
     depends_on:
       - tpAchatProject
     image: amineghanmi/tp-achatproject-front:latest
     restart: unless-stopped
     ports:
       - "4200:80"
-    
 
 volumes:
   db:
