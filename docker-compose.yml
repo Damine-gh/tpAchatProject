@@ -29,6 +29,14 @@ services:
       }'
     stdin_open: true
     tty: true
+    
+    tpAchatProject-front:
+    image: amineghanmi/tp-achatproject-front:latest
+    restart: unless-stopped
+    ports:
+      - "4200:80"
+    depends_on:
+      - tpAchatProject
 
 volumes:
   db:
